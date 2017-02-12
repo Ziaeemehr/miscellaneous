@@ -36,6 +36,13 @@ vector<int> v(2)={34,23};
 // Declaration of a matrix with 3 rows and 4 columns
 vector< vector<int> > my_matrix(3,vector<int>(4));
 
+typedef vector<int> Dim1;
+typedef vector<Dim1> Dim2;
+typedef vector<Dim2> Dim3;
+typedef vector<Dim3> Matrix4D;
+Matrix4D my_matrix(5,Dim3(i+1,Dim2(n,Dim1(9))));
+
+
 // A more elegant declaration
 typedef vector<int> Row;        // One row of the matrix
 typedef vector<Row> Matrix;     // Matrix: a vector of rows

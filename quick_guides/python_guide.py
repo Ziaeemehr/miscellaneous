@@ -58,10 +58,83 @@ import glob
 glob.glob('./*.txt')
 
 
+#fixed seed 
+import  numpy as np
+np.random.seed(123)
+print np.random.rand(2)
+
+#normal random distrbution
+mu = 0; sigma = .1
+np.random.normal(mu,sigma,1000)
+
+a0 = np.array([1,2,3])
+np.matlib.repmat(a0,2,3)
+#size of figure
+plt.figure(figsize=(10,10))
+
+#trace and sum of matrix or 2D array
+np.trace(A)
+np.sum(A)
+np.transpose(A)
+
+#get the current time
+>>> from time import gmtime, strftime
+>>> strftime("%Y-%m-%d %H:%M:%S", gmtime())
+'2009-01-05 22:14:39'
+
+#imshow
+fig = plt.figure()
+
+ax1 = fig.add_subplot(2,1,1)
+ax1.set_aspect('equal')
+plt.imshow(Conn,interpolation='nearest', cmap='afmhot') # , cmap=plt.cm.ocean
+plt.colorbar()
+ax2 = fig.add_subplot(2,1,2)
+ax2.set_aspect('equal')
+plt.imshow(Corr,interpolation='nearest', cmap='afmhot') # , cmap=plt.cm.ocean
+plt.colorbar()
+
+#append
+list.append(obj)
+
+
+import matplotlib.gridspec as gridspec
+fig = plt.figure(figsize=(10,6))
+gs = gridspec.GridSpec(4, 1)
+ax1 = plt.subplot(gs[0:3, 0])
+plt.plot(t,sol[:,0])
+plt.ylabel('V')
+plt.tick_params(
+    axis='x',          # changes apply to the x-axis
+    which='both',      # both major and minor ticks are affected
+    bottom='off',      # ticks along the bottom edge are off
+    top='off',         # ticks along the top edge are off
+    labelbottom='off') # labels along the bottom edge are off
+ax2 = plt.subplot(gs[3, 0])
+plt.plot(t,y)
+
+
+#add row of time to the first row of matrix A
+np.insert(A,0,t[:],axis=0) 
 
 
 
+#extend and append:
+x = [1, 2, 3]
+x.append([4, 5])
+#out: [1, 2, 3, [4, 5]]
+x = [1, 2, 3]
+x.extend([4, 5])
+#out:[1, 2, 3, 4, 5]
 
 
+#To delete the first row, do this:
+x = numpy.delete(x, (0), axis=0)
+#To delete the third column, do this:
+x = numpy.delete(x,(2), axis=1)
 
-
+#delete zero rows of ndarray
+Conn[np.all(Conn == 0, axis=1)]
+Conn = Conn[~np.all(Conn == 0, axis=1)]
+#print with out new line
+sys.stdout.write('%d '% item)
