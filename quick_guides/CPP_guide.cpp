@@ -84,3 +84,63 @@ std::array<int, 5> b = {5,4,3,2,1};
 a = b;
 // or
 // also work with vector
+
+
+//save to file with variable filename
+string f1="./../data/pot"+to_string(ensemble)+".txt";
+char const *file1 = f1.c_str();
+FILE *ofile;
+ofile = fopen(file1,"w");
+for (int i=0; i<nsteps; i++)
+    fprintf(ofile,"%15.9f ",i*dt);
+fprintf(ofile,"\n");    
+for (int i=0; i<Node; i++){
+    for (int j=0; j<nsteps; j++)
+        fprintf(ofile,"%15.9f ",X[i][j]);
+    fprintf(ofile,"\n");
+}
+fclose(ofile);
+
+double **Matrix;
+Matrix = (double**)malloc(sizeof(double*)*(Dim));  
+for(i=0;i<Dim;i++)
+    Matrix[i] = (double*)malloc(sizeof(double)*(Dim));
+
+for( i=0;i<Dim;i++){
+    for( j=0;j< Dim;j++)
+       Matrix[i][j] = 0.0;
+}
+
+// allocation by new
+//1D
+foo = new int [5];  // if allocation fails, an exception is thrown
+foo = new (nothrow) int [5]; 
+// e.g:
+int * foo;
+foo = new (nothrow) int [5];
+if (foo == nullptr) {
+  // error assigning memory. Take measures.
+}
+int * p;
+p= new (nothrow) int[i];
+delete[] p;
+
+//2D
+int** ary = new int*[rowCount];
+for(int i = 0; i < rowCount; ++i)
+    ary[i] = new int[colCount];
+//or
+int **ary = new int*[sizeY];
+for(int i = 0; i < sizeY; ++i) {
+    ary[i] = new int[sizeX];
+}
+// and then clean up would be:
+for(int i = 0; i < sizeY; ++i) {
+    delete [] ary[i];
+}
+delete [] ary;
+
+// An alternative approach would be to use one large block of memory:
+int *ary = new int[sizeX*sizeY];
+// ary[i][j] is then rewritten as
+ary[i*sizeY+j]
