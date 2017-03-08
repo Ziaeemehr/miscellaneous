@@ -13,4 +13,4 @@ def f(n):
 print f(int(argv[1]))
 this is a test to see what happen in git exercise
 
-size = 333
+size = 43
