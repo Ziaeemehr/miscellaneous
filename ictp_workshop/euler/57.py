@@ -12,3 +12,5 @@ def f(n):
 
 print f(int(argv[1]))
 
+
+size = 43
