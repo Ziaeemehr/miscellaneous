@@ -41,8 +41,13 @@ def animate(t,carList):
     plt.draw()
     plt.pause(0.01)
 
-def plottingTX(i*timeStep,cars):
-    
+def plottingTX(t,carList):
+    x = []
+    for i in range(len(carList)):
+        x.append(carList[i].x)
+    plt.plot(x,[t]*len(x),'ro')
+    plt.draw()
+    plt.pause(0.01)
 
 cars={}
 tmpCarNumbers = 0
@@ -64,5 +69,5 @@ for i in range(nsteps):
         
     for j in range(tmpCarNumbers):
         cars[j].move(timeStep,j,cars)
-    animate(i*timeStep,cars)
+    #animate(i*timeStep,cars)
     plottingTX(i*timeStep,cars)
