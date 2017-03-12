@@ -15,8 +15,10 @@ class Car(ITimeDependent):
         self.negativeA = -1.
         self.criticalDistance = 10
         
-    def setFrontCar(self,frontCar):
-        self.frontCar=frontCar
+    def move():
+        
+        
+        
         
     def update(self, time,timeStep):
         distance=(self.frontCar.x - self.x)
