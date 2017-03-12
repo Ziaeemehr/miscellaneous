@@ -8,6 +8,7 @@ class Station {
 
 public:
     
+    Station();
     Station( vector<Class::Parcel> parcel ){
         
         for(int i=0; i<N; i++){
