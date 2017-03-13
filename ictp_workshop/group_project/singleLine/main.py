@@ -1,27 +1,26 @@
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
 from module import Car,plottingTX,animate
 import numpy as np
 from config import *
 
 cars={}
-tmpCarNumbers = 0
+tmpN = 0 #temporal number of cars
 
-nsteps = int(tFinal/timeStep)
-plt.figure(figsize=(15,10))
+nsteps = int(tf/dt)
+plt.figure(figsize=(10,7))
 
 for i in range(nsteps):
-    if ((i*timeStep/intervalAddingCar>tmpCarNumbers) & 
-        (tmpCarNumbers<maxCarNumbers)):
-        tmpCar = Car(t=t0 + i*20,x0=0,v0=v0[tmpCarNumbers],
-                     targetVelocity=targetVelocity[tmpCarNumbers],
-                     carID=tmpCarNumbers)
-        #cars[tmpCarNumbers] = {'x':tmpCar.x,'v':tmpCar.v}
-        cars[tmpCarNumbers] = tmpCar
-        tmpCarNumbers = len(cars)
+    if ((i*dt/pause>tmpN) & (tmpN < N)):
+        tmpCar = Car(t=t0+i*pause,x0=0,v0=v0[tmpN],
+                     vf=vf[tmpN],
+                     dm=dm,
+                     carID=tmpN)
+        cars[tmpN] = tmpCar
+        tmpN = len(cars)
         
-    for j in range(tmpCarNumbers):
-        cars[j].move(timeStep,j,cars)
-    animate(i*timeStep,cars)
-    #plottingTX(i*timeStep,cars)
+    for j in range(tmpN):
+        cars[j].move(dt,j,cars)
     
+    animate(i*dt,cars)
+    #plottingTX(i*dt,cars)
+plt.show()    

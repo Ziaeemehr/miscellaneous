@@ -2,15 +2,25 @@ import matplotlib.pyplot as plt
 from module import Car,plottingTX,animate
 import numpy as np
 
-maxCarNumbers = 5
-np.random.seed(123)
+''' variables:
+dt    : time step
+tf    : final time of simulation
+pause : pause to add another car
+dm    : min distance to car break
+minV  : min velocity 
+maxV  : max velocity
+v0    : initial velocity
+N     : max number of cars
+'''
+
+#np.random.seed(123)
+N = 5
 t0 = 0
-timeStep = 0.1
-tFinal = 30
-intervalAddingCar = 20.*timeStep
-criticalDistance = 10
-minVelocity = 20
-maxVelocity = 30
-v0 = np.random.randint(10,size=maxCarNumbers)+10
-targetVelocity = np.random.rand(maxCarNumbers)* \
-    (maxVelocity-minVelocity)+ minVelocity
+dt = 0.1            
+tf = 30
+pause = 20.*dt
+dm = 10 
+minV = 20
+maxV = 30
+v0 = np.random.randint(10,size=N)+10
+vf = np.random.rand(N)*(maxV-minV)+ minV
