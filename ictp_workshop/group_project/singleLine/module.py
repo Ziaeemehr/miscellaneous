@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class Car(object):
-    def __init__(self,t,x0,v0,targetVelocity,carID):
+    def __init__(self,t,x0,v0,targetVelocity,criticalDistance,carID):
         self.t  = t
         self.x  = x0
         self.v  = v0
@@ -11,7 +11,7 @@ class Car(object):
         self.acceleration = 0
         self.positiveA = 0.5
         self.negativeA = -1.
-        self.criticalDistance = 10
+        self.criticalDistance = criticalDistance
 
     def move(self, timeStep,carID,carList):
         if carID>0 :
@@ -23,9 +23,7 @@ class Car(object):
         if (self.v<self.targetVelocity) and (self.v>=0):
             self.v += self.acceleration * timeStep
             
-            
         self.x += self.v * timeStep
-        
         
         carList[carID].x = self.x
         carList[carID].v = self.v

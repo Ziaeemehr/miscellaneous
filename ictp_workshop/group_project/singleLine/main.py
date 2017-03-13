@@ -22,5 +22,6 @@ for i in range(nsteps):
         
     for j in range(tmpCarNumbers):
         cars[j].move(timeStep,j,cars)
-    #animate(i*timeStep,cars)
-    plottingTX(i*timeStep,cars)
+    animate(i*timeStep,cars)
+    #plottingTX(i*timeStep,cars)
+    
