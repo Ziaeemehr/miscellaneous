@@ -3,9 +3,12 @@
 #include<vector>
 #include<stdio.h>  
 #include<stdlib.h> 
+#include "station.h"
+#include "parcel.h"
+
 
 using namespace std;
-int N = 10000;
+int N = 10;
 
 //--------------------------------------------------//
 class Manager{
@@ -23,10 +26,10 @@ private:
 //--------------------------------------------------//
 
 int main(int argc, char *argv[]){
+    
+    srand(1234);
     vector<string> dest_list{"B","C","D"};
-    
     vector<Parcel> parcel(N);
-    
     
     Station station_A(parcel), station_B, station_C,station_D;
     

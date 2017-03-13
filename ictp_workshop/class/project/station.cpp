@@ -1,5 +1,3 @@
 #include"station.h"
 
-Station::Station( vector<Class::Parcel> parcel);
-    
-    
+Station::Station( vector<class::Parcel> parcel);

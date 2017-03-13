@@ -1,8 +1,6 @@
 #ifndef CAT_H
 #define CAT_H
 
-
-
 #include <string>
 using std::string;
 
@@ -11,15 +9,10 @@ using std::string;
 class Cat : public Animal {
 public:
 
-	Cat(string name, 
+	Cat(string name,
 	    double weight);
 
 	string sound() { return "Miaow!"; }
 };
 
-
-
 #endif
-
-
-

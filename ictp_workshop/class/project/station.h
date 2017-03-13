@@ -3,19 +3,22 @@
 
 #include <string>
 #include <vector>
+#include "parcel.h"
+using namespace std;
 
 class Station {
 
 public:
-    
-    Station( vector<Class::Parcel> parcel ){
-        
-        for(int i=0; i<N; i++){
-            dest = parcel[i].destination;
+
+    Station();
+    Station( vector<class::Parcel> parcel ){
+
+        for(int i=0; i<parcel.size(); i++){
+            dest = parcel[i].get_dest();
+            cout << dest<< endl;
         }
     }
-    
-    
+
 private:
     string dest;
 };
