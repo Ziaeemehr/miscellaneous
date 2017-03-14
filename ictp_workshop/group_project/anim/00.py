@@ -25,11 +25,11 @@ plt.ylim(0, 1)
 plt.xlabel('x')
 plt.title('test')
 line_ani = animation.FuncAnimation(fig1, update_line, 25, fargs=(data, l),
-                                   interval=50, blit=True)
+                                   interval=50)
 
 # To save the animation, use the command: line_ani.save('lines.mp4')
 
-
+#exit(0)
 fig2 = plt.figure()
 
 x = np.arange(-9, 10)

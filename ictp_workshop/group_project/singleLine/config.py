@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from module import Car,plottingTX,animate
 import numpy as np
 
 ''' variables:

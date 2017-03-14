@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
 import numpy as np
 
 class Car(object):
@@ -10,7 +9,7 @@ class Car(object):
         self.v  = v0
         self.vf = vf
         self.posAcc = 1.        #positive acceleration
-        self.negAcc = -1.       #negative acceleration
+        self.negAcc = -1.       #negative acceleration (later is changed by velocity)
         self.dm = dm
         self.acc = self.posAcc  #instantatious acceleration
 
@@ -32,21 +31,21 @@ class Car(object):
         carList[carID].x = self.x
         carList[carID].v = self.v
         
+    @staticmethod
+    def animate(t,carList):
+        x = []
+        for i in range(len(carList)):
+            x.append(carList[i].x)
+        plt.clf()
+        line, = plt.plot(x,[0]*len(x),'ko')
+        plt.xlim([0,200])
+        plt.draw()
+        plt.pause(0.01)
 
-def animate(t,carList):
-    x = []
-    for i in range(len(carList)):
-        x.append(carList[i].x)
-    plt.clf()
-    line, = plt.plot(x,[0]*len(x),'ko')
-    plt.xlim([0,200])
-    plt.draw()
-    plt.pause(0.01)
-
-def plottingTX(t,carList):
-    x = []
-    for i in range(len(carList)):
-        x.append(carList[i].x)
-    plt.plot(x,[t]*len(x),'ro')
-    plt.draw()
-    plt.pause(0.01)
+    def plottingTX(t,carList):
+        x = []
+        for i in range(len(carList)):
+            x.append(carList[i].x)
+        plt.plot(x,[t]*len(x),'ro')
+        plt.draw()
+        plt.pause(0.01)
