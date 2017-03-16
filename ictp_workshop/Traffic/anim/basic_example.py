@@ -26,7 +26,8 @@ plt.xlabel('x')
 plt.title('test')
 line_ani = animation.FuncAnimation(fig1, update_line, 25, fargs=(data, l),
                                    interval=50, blit=True)
-
+plt.show()
+exit(0)
 # To save the animation, use the command: line_ani.save('lines.mp4')
 
 
@@ -44,4 +45,4 @@ im_ani = animation.ArtistAnimation(fig2, ims, interval=50, repeat_delay=3000,
 # To save this second animation with some metadata, use the following command:
 # im_ani.save('im.mp4', metadata={'artist':'Guido'})
 
-plt.show()
+#plt.show()
