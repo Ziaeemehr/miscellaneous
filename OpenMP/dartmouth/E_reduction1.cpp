@@ -1,13 +1,7 @@
-/*
-* @@name:	reduction.1c
-* @@type:	C
-* @@compilable:	yes
-* @@linkable:	no
-* @@expect:	success
-*/
 #include <cmath>
 #include <omp.h>
 #include<stdlib.h>
+#include<stdio.h>
 
 void reduction1(float *x, int *y, int n)
 {

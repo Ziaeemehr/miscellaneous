@@ -26,3 +26,5 @@ int main(int argc, char *argv[]){
     printf("sum is %f\n",sum);
     return 0;
 }
+
+// look at reduction.1c.c
