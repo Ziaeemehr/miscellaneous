@@ -11,14 +11,18 @@ void single_example(){
     #pragma omp parallel num_threads(2)
     {
         #pragma omp single nowait
-        printf("Beginning work1. \n");
-        work1();
+        {
+            printf("Beginning work1. \n");
+            work1();
+        }
         #pragma omp single 
         printf("Finishing work1. \n");
 
         #pragma omp single nowait
-        printf("Beginning work2. \n");
-        work2();
+        {
+            printf("Beginning work2. \n");
+            work2();
+        }
         #pragma omp single 
         printf("Finishing work2. \n");
     }

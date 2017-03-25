@@ -71,7 +71,7 @@ int main()
       printf("Single construct executed by thread %d\n",
              omp_get_thread_num());
    }
-
+/* A barrier is automatically inserted here */
    #pragma omp for
    for (i=0; i<n; i++)
        b[i] = a;
