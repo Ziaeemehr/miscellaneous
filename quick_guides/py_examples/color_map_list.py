@@ -22,3 +22,9 @@ cmps = ['Accent', 'Accent_r', 'Blues', 'Blues_r', 'BrBG',
         'plasma', 'plasma_r', 'prism', 'prism_r', 'rainbow', 'rainbow_r', 'seismic', 
         'seismic_r', 'spectral', 'spectral_r', 'spring', 'spring_r', 'summer', 'summer_r', 
         'terrain', 'terrain_r', 'viridis', 'viridis_r', 'winter', 'winter_r']  #'jet', 'jet_r',
+
+
+interpolation =['none', 'nearest', 'bilinear', 'bicubic',
+        'spline16', 'spline36', 'hanning', 'hamming', 'hermite', 'kaiser',
+        'quadric', 'catrom', 'gaussian', 'bessel', 'mitchell', 'sinc',
+        'lanczos']

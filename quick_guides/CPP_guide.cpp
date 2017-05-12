@@ -6,6 +6,23 @@ t = clock();
 t = clock() - t;
   printf ("It took %f seconds.\n",((float)t)/CLOCKS_PER_SEC);
   
+
+
+// wall time and cpu time 
+#include <time.h>
+#include <sys/time.h>
+double get_wall_time(){
+    struct timeval time;
+    if (gettimeofday(&time,NULL)){
+        //  Handle error
+        return 0;
+    }
+    return (double)time.tv_sec + (double)time.tv_usec * .000001;
+}
+double get_cpu_time(){
+    return (double)clock() / CLOCKS_PER_SEC;
+}
+
   
 // initialize array
 int foo [5] = { 16, 2, 77, 40, 12071 }; 
@@ -101,6 +118,13 @@ for (int i=0; i<Node; i++){
 }
 fclose(ofile);
 
+// short and simple save to file
+ofstream myfile;
+myfile.open ("example.txt");
+myfile << "Writing this to a file.\n";
+myfile.close();
+
+
 double **Matrix;
 Matrix = (double**)malloc(sizeof(double*)*(Dim));  
 for(i=0;i<Dim;i++)
@@ -144,3 +168,29 @@ delete [] ary;
 int *ary = new int[sizeX*sizeY];
 // ary[i][j] is then rewritten as
 ary[i*sizeY+j]
+
+// pusg_back to a 2D vector
+std::vector<std::vector <int> > normal;
+for(int i=0;i<5;i++)
+{
+    normal.push_back(std::vector<int>());
+    for(int j=0;j<10;j++)
+    {    
+        normal[i].push_back(j);    
+    }
+}
+// initialze a pointer array to zero:
+/* http://stackoverflow.com/a/2615245/784433 */
+struct S {
+  int *a[100];
+
+  S() : a() {
+    // `a` contains null pointers 
+  }
+};
+int *a = new int[100]();
+// `a[i]` contain null pointers
+int *a[100] = {};
+// `a` contains null pointers 
+
+

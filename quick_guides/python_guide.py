@@ -138,3 +138,8 @@ Conn[np.all(Conn == 0, axis=1)]
 Conn = Conn[~np.all(Conn == 0, axis=1)]
 #print with out new line
 sys.stdout.write('%d '% item)
+
+
+#numpy.ndarray.tolist
+a = np.array([1, 2])
+a.tolist()
