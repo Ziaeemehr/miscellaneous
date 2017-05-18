@@ -21,8 +21,4 @@ hellomake: $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
-
-
-Thanks you Mike, I moved the makefunc.c to src. 
-It worked. But is there any way to use some files in `../lib` and in `src` folder only be the main file (`hellomake.c`)?
+	rm -f $(ODIR)/*.o *~  

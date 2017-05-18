@@ -4,3 +4,4 @@ a.out
 *.pyc
 *.mp4
 *.pdf
+*.o
