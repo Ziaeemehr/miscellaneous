@@ -238,3 +238,20 @@ gfortran -pg myprog.o
 !then
 ./a.out
 gprog a.out
+
+# get variable from command line
+INTEGER :: i
+CHARACTER(len=32) :: arg
+
+DO i = 1, iargc()
+    CALL getarg(i, arg)
+    if ( arg .eq. "True") then
+        WRITE (*,*) arg
+    end if
+END DO
+
+
+
+
+
+

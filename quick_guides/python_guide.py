@@ -143,3 +143,19 @@ sys.stdout.write('%d '% item)
 #numpy.ndarray.tolist
 a = np.array([1, 2])
 a.tolist()
+
+
+#There's a simple way to check if matrix is symmetric using numpy:
+(arr.transpose() == arr).all()
+
+#How to count the occurrence of certain item in an ndarray in Python?
+y = np.array([1, 2, 2, 2, 2, 0, 2, 3, 3, 3, 0, 0, 2, 2, 0])
+np.count_nonzero(y == 1)
+
+#How can I count the occurrences of a list item in Python?
+[1, 2, 3, 4, 1, 4, 1].count(1)
+
+from collections import Counter
+>>z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+>>Counter(z)
+Counter({'blue': 3, 'red': 2, 'yellow': 1})
