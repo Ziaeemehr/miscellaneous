@@ -79,7 +79,50 @@ int const A::test[10][10] = {
   {0, 0, 0, 7, 7, 7, 7, 0, 0, 0}
 };
 
+# valarray  section 40.5.1 
+valarray va {};         //valarray with no elements
+valarray va {n};        //valarray of n elements with value T{}; explicit
+valarray va {t,n};      //valarray of n elements with value t
+valarray va {p,n};      //valarray o f n elements with values copied from [p:p+n) 
+valarray va {v2};       //Move and copy constructor
+valarray va {a};        //construct va with elements from a;
 
+valarray<double> v0;         //placeholder
+valarray<double> v1(1000);   // 1000 elements with value float()==0.0F
+valarray<int> v2(-1,2000);   // 2000 elements with value -1
+valarray<double> v4=v3       // v4 has v2.size() elements
+valarray<int> v5{-1,2000};   // two elements
+
+
+
+
+std::valarray<int> foo (10);
+for (int i=0; i<10; ++i) foo[i]=i;
+
+double val[] = {1.5, 3.1, 5.5};
+std::valarray<double> foo (val,3);
+std::valarray<double> bar = cos (foo);
+for (std::size_t i=0; i<foo.size(); ++i)
+      std::cout << ' ' << foo[i];
+for (std::size_t i=0; i<bar.size(); ++i)
+      std::cout << ' ' << bar[i];
+// foo: 1.5 3.1 5.5
+// bar: 0.0707372 -0.999135 0.70867
+double val[] = {1.0, 2.0, 4.0, 8.0};
+std::valarray<double> foo (val,4);
+std::valarray<double> bar = exp (foo);
+
+int init[]={0,10,20,30};
+std::valarray<int> myvalarray (init,4);
+std::cout << "The sum is " << myvalarray.sum() << '\n';
+// The sum is 60
+
+
+# 2d valarray
+typedef valarray<valarray<int> > va2d;
+va2d mat(valarray<int>(4), 10);  // (col,row)
+cout << "row " << M.size() <<endl; 
+cout << "col " << M[0].size() << endl; 
 
 
 // Set one array equal to another without a loop

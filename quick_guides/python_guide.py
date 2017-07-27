@@ -159,3 +159,30 @@ from collections import Counter
 >>z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
 >>Counter(z)
 Counter({'blue': 3, 'red': 2, 'yellow': 1})
+
+alist = ['a1', 'a2', 'a3']
+for i, a in enumerate(alist):
+    print i, a
+
+0 a1
+1 a2
+2 a3
+
+alist = ['a1', 'a2', 'a3']
+blist = ['b1', 'b2', 'b3']
+
+for a, b in zip(alist, blist):
+    print a, b
+a1 b1
+a2 b2
+a3 b3
+
+alist = ['a1', 'a2', 'a3']
+blist = ['b1', 'b2', 'b3']
+
+for i, (a, b) in enumerate(zip(alist, blist)):
+    print i, a, b
+
+0 a1 b1
+1 a2 b2
+2 a3 b3
