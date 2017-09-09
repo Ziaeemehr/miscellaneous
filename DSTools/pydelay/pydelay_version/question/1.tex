@@ -1,0 +1,19 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+%\usepackage{amsmath}
+\usepackage[fleqn]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\begin{document}
+
+
+\begin{equation*}
+     \begin{aligned}
+     & \frac{dX_k}{dt} = -X_k+(1-rX_k)f\Big(c_1X_k-c_2Y_k + P +\eta \sum_{l=1}^N c_{kl}X_l(t-\tau) \Big) \\
+     & \frac{dY_k}{dt} = -Y_k+(1-rY_k)g\Big(c_3X_k-c_4Y_k   \Big)     \\
+     & k = 1..N, \quad  k \neq l
+     \end{aligned}
+\end{equation*}
+
+\end{document}

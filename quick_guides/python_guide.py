@@ -186,3 +186,31 @@ for i, (a, b) in enumerate(zip(alist, blist)):
 0 a1 b1
 1 a2 b2
 2 a3 b3
+
+
+
+
+## run.py
+import os 
+
+os.system("make clean")
+os.system("make")
+for i , j in zip(g_n,tau_n):
+    command = "./prog   "+ str(i) + " " + str(j)
+    os.system(command)
+
+#Using a string variable as a variable name
+foo= 'bar'
+exec(foo+" = 'somthing else'")
+print bar
+somthing else
+
+foo= 'bar'
+exec(foo+" = 1")
+print bar
+
+foo= 'bar'
+exec(foo+" = np.random.rand()")
+
+x='buffalo'    
+exec("%s = %d" % (x,2))
