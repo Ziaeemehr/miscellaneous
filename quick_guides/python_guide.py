@@ -113,6 +113,11 @@ plt.tick_params(
 ax2 = plt.subplot(gs[3, 0])
 plt.plot(t,y)
 
+#hide axis labels:
+ax.get_xaxis().set_ticks([])
+ax.get_yaxis().set_ticks([])
+    
+
 
 #add row of time to the first row of matrix A
 np.insert(A,0,t[:],axis=0) 
@@ -214,3 +219,15 @@ exec(foo+" = np.random.rand()")
 
 x='buffalo'    
 exec("%s = %d" % (x,2))
+
+#print with leading zero:
+print "%02d" % 5    #prints   05
+print "%06.2f" % 5  #prints   005.00
+
+
+
+#box annotation
+bbox_props = dict(boxstyle="round,pad=0.1", fc="linen", ec="linen", lw=2)
+t = ax1.text(0.8, 0.8, " A ", ha="center", va="center", rotation=0,
+            size=20,
+            bbox=bbox_props)

@@ -5,3 +5,6 @@ a.out
 *.mp4
 *.pdf
 *.o
+*.zip
+build/
+.vscode/

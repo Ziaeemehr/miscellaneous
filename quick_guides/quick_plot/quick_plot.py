@@ -170,10 +170,18 @@ from mpl_toolkits.axes_grid1.inset_locator import mark_inset
 mark_inset(ax, axins, loc1=2, loc2=4, fc="none", ec="0.5")
 
 
+# Error bar:
+
+# example data
+x = np.arange(0.1, 4, 0.5)
+y = np.exp(-x)
+
+plt.errorbar(x, y, xerr=0.2, yerr=0.4, capthick=2, capsize=5, ecolor='g', fmt='--o')
+plt.title("Simplest errorbars, 0.2 in x, 0.4 in y")
 
 
-
-
+#xticks interval
+ax1.set_xticks(np.arange(0, 6, 0.5))
 
 
 

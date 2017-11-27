@@ -236,4 +236,6 @@ int *a = new int[100]();
 int *a[100] = {};
 // `a` contains null pointers 
 
-
+// when gdb is not enough
+std::cerr << t - pt_t_ar[0] << ' ' << std::numeric_limits<double>::epsilon() << std::endl;
+std::cerr << __LINE__ << std::endl;
