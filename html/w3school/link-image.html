@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		a:link {
+			color: green;
+			background-color: transparent;
+			text-decoration: none;
+		}
+		a:visited {
+			color: pink;
+			background-color: transparent;
+			text-decoration: none;
+		}
+		a:hover {
+			color: red;
+			background-color: transparent;
+			text-decoration: underline;
+		}
+		a:active {
+			color: yellow;
+			background-color: transparent;
+			text-decoration: underline;
+		}
+
+	</style>
+</head>
+<body>
+
+	<p><a href="html_images.asp">HTML Images</a> is a link to a page on this website.</p>
+
+	<p><a href="https://www.w3.org/">W3C</a> is a link to a website on the World Wide Web.</p>
+
+	<a href="https://www.w3schools.com/html/" target="_top">HTML5 tutorial!</a> <br>
+	<!-- Image as a link -->
+	<center>
+	<a href="default.asp"><img src="test.jpg" alt="my image" style="width:200px;height: 150px; border:5;"></a>
+	</center>
+
+	<!-- bookmark -->
+	<p><a href="#C4">Jump to Chapter 4</a></p>
+
+	<h2>Chapter 1</h2>
+	<p>This chapter explains ba bla bla</p>
+
+	<h2>Chapter 2</h2>
+	<p>This chapter explains ba bla bla</p>
+
+	<h2>Chapter 3</h2>
+	<p>This chapter explains ba bla bla</p>
+
+	<h2 id="C4">Chapter 4</h2>
+	<p>This chapter explains ba bla bla</p>
+
+	<h2>Chapter 5</h2>
+	<p>This chapter explains ba bla bla</p>
+
+	<h2>Chapter 6</h2>
+	<p>This chapter explains ba bla bla</p>
+
+	<!-- Image size width and height -->
+	<img src="test.jpg" alt="my image" style="width:50px;height:30px;">
+	<img src="test.jpg" alt="my image" width="50" height="30">
+
+	<!-- image floating -->
+	<p><img src="test.jpg" alt="smiley face" style="float: right;width: 60px; height:40px;">The image will float to the right of the text.</p>
+	<p><img src="test.jpg" alt="smiley face" style="float:left; width: 60px; height: 40px;"> The image will float to the left of the text.</p>
+
+	<!-- image map -->
+	<h1> ...</h1>
+	<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+	<map name="workmap">
+		<area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+		<area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+		<area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+	</map>
+
+	<!-- background image -->
+	<!-- <body style="background-image: url('workplace.jpg');'"> -->
+	<!-- background image on a paragraph-->
+	<p style="background-image: url('workplace.jpg');">
+	... </p>
+
+
+
+</body>
+</html>
