@@ -1,0 +1,14 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-10.eps"
+set title "plot-10"
+
+set key top left box 3
+set xlabel "Time [s]"
+set ylabel "Mean Square Displacement"
+
+f(x) = a*x + b
+fit f(x) 'MSD.text' u 1:2 via a, b
+
+plot 'MSD.text' u 1:2 w p pt 7 ps 0.5 title "Data", f(x) w l lc 1 lt -1 title "Fit"

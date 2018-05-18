@@ -1,0 +1,10 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-2.eps"
+set title "plot-2"
+
+set xrange[-pi:pi]
+set yrange[-2:2]
+
+plot sin(x) with line linecolor 1, cos(x) with points linecolor 2

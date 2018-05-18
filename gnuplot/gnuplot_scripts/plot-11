@@ -1,0 +1,15 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-11.eps"
+set title "plot-11"
+
+set key box 3
+
+f(x) = a*sin(b*x) + c*x + d*x**2 + e
+fit f(x) 'data.text' u 1:2 via a, b, c, d, e
+
+g(x) = a0 + a1*x + a2*x**2 + a3*x**3 + a4*x**4
+fit g(x) 'data.text' u 1:2 via a0, a1, a2, a3, a4
+
+plot 'data.text' w p pt 7 ps 0.5 title "Data", f(x) w l lc 1 lt -1 title "Fit 1", g(x) w l lc 3 lt 5 title "Fit 2"

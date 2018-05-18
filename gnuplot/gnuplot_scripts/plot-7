@@ -1,0 +1,12 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-7.eps"
+set title "plot-7"
+
+set key at -1,1 box 4 
+
+set xrange[-pi:pi]
+set yrange[-2:2]
+
+plot sin(x) w l lc 1 lt -1 , cos(x) w l lc 3 lt 5 

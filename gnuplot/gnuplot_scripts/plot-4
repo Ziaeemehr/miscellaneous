@@ -1,0 +1,7 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-4.eps"
+set title "plot-4"
+
+plot 'MSD.text' u 1:2 w p ps 0.5 pt 7 title "D_x", 'MSD.text' u 1:3 w p ps 0.5 pt 6 title "D_y"

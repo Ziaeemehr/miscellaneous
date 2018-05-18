@@ -1,0 +1,15 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-17.eps"
+
+unset key; unset border; unset xtics; unset ytics; unset ztics
+
+f(x,y) = exp(-(x**2 + y**2))*cos(x/4)*sin(y)*cos(2*(x**2+y**2))
+
+set view 40, 45
+set palette model HSV defined
+set isosamples 200
+set pm3d depthorder
+
+splot [-2:2][-2:2] f(x,y) w pm3d ls 1

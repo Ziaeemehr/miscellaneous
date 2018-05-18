@@ -1,0 +1,16 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-9.eps"
+set title "plot-9"
+
+set key off
+set grid
+
+set ytics 1.0
+set xtics pi
+
+set xrange[-2*pi:2*pi]
+set yrange[-2:2]
+
+plot sin(x) w l lc 1 lt -1 , cos(x) w l lc 3 lt 5

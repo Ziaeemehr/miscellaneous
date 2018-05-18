@@ -1,0 +1,10 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-3.eps"
+set title "plot-3"
+
+set xrange[-pi:pi]
+set yrange[-2:2]
+
+plot sin(x) w l lc 1 lt -1 title "func-1", cos(x) w l lc 3 lt 5 title "func-2"

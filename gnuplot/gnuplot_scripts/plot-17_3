@@ -1,0 +1,14 @@
+#! /usr/bin/gnuplot
+
+set terminal svg
+set output 'plot-17_3.svg'
+
+unset key; unset border; unset xtics; unset ytics; unset ztics
+
+f(x,y) = exp(-(x**2 + y**2))*cos(x/4)*sin(y)*cos(2*(x**2+y**2))
+set view 40, 45
+set isosamples 200
+set pm3d depthorder
+
+set palette functions gray, gray, gray
+splot [-2:2][-2:2] f(x,y) w pm3d ls 1

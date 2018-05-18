@@ -1,0 +1,14 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-16.eps"
+
+unset key; unset border; unset xtics; unset ytics; unset surface
+
+f(x,y) = exp(-(x**2 + y**2))*cos(x/4)*sin(y)*cos(2*(x**2+y**2))
+
+set view map
+set size square
+set contour base; set cntrparam levels 10
+set isosamples 50
+splot [-2:2][-2:2] f(x,y)

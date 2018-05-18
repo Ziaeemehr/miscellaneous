@@ -1,0 +1,34 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-15.eps"
+
+unset key
+
+set xrange [-2:2]
+set yrange [-2:2]
+
+f(x,y) = exp(-(x**2 + y**2))*cos(x/4)*sin(y)*cos(2*(x**2+y**2))
+
+set multiplot layout 2, 2
+
+set view 40, 45
+set isosamples 50
+
+set title "trianglepattern 1"
+set hidden3d trianglepattern 1
+splot f(x,y)
+
+set title "trianglepattern 2"
+set hidden3d trianglepattern 2
+splot f(x,y)
+
+set title "trianglepattern 5"
+set isosamples 30
+set hidden3d trianglepattern 5
+splot f(x,y)
+
+set title "trianglepattern 7"
+set isosamples 30
+set hidden3d trianglepattern 7
+splot f(x,y)

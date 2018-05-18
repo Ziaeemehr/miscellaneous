@@ -1,0 +1,9 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-8_2.eps"
+
+unset key
+set size square
+
+plot [-3:3][-3:3] "fluid.text" using 1:2:3:4 with vectors head size 0.05, 25

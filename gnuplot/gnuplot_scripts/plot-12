@@ -1,0 +1,31 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-12.eps"
+
+f(x,n) = sin(n*x)/(n*x)
+
+set xrange [-1:1]
+set yrange [-0.5:1.5]
+
+set multiplot title "plot-12" layout 2,3
+
+set title "sub plot 1"
+plot f(x,2) w l lc 1
+
+set title "sub plot 2"
+plot f(x,4) w l lc 2
+
+set title "sub plot 3"
+plot f(x,6) w l lc 3
+
+set title "sub plot 4"
+plot f(x,8) w l lc 4
+
+set title "sub plot 5"
+plot f(x,10) w l lc 5
+
+set title "sub plot 6"
+plot f(x,12) w l lc 6
+
+unset multiplot

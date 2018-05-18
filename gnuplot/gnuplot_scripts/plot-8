@@ -1,0 +1,21 @@
+#! /usr/bin/gnuplot
+
+set terminal postscript eps enhanced
+set output "plot-8.eps"
+set title "plot-8"
+
+set key at -1,1 box 4
+
+set arrow from 2.4, 1.8 to 1.6, 1.1
+set label "This is a \nMaximum" at 1.5, 1.8
+
+set arrow from -1, -1.5 to -1.6, -1.1
+set label "This is a Minimum" at -1, -1.5
+
+set arrow from -1.57, 0 to 1.57, 0 heads size 0.1, 90
+set label "Half a wavelength" at -0.5, -0.2
+
+set xrange[-pi:pi]
+set yrange[-2:2]
+
+plot sin(x) w l lc 1 lt -1 , cos(x) w l lc 3 lt 5 
