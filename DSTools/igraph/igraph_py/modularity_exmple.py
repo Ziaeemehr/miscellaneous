@@ -8,19 +8,25 @@ from sys import exit
 
 clusters = [50,50]
 gr = make_graph()
-Adj = gr.modular_graph(sum(clusters), 0.9, 0.1, clusters, 1, 1, plot_adj=False)
+Adj = gr.modular_graph(sum(clusters), 
+                        0.9, 0.1,
+                        clusters, 
+                        1, 1, 
+                        plot_adj=False)
+G = gr.G
+print type(G)
+
 comm = comm_unweighted(Adj)
-cl = igraph.Clustering(comm.membership)
+print G.modularity(comm.membership)
+# cl = igraph.Clustering(comm.membership)
 # print cl.membership
-G = gr.G 
+# G = gr.G 
 # print G.nodes()
 
 
-
-exit(0)
-g = igraph.Graph.Full(3)+igraph.Graph.Full(3)
-weights = [1, 1, 1, 2, 2, 2]
-print g.modularity([0, 0, 0, 1, 1, 1], weights)
+# g = igraph.Graph.Full(3)+igraph.Graph.Full(3)
+# weights = [1, 1, 1, 2, 2, 2]
+# print g.modularity([0, 0, 0, 1, 1, 1])#, weights)
 
 # cl = igraph.VertexClustering(G, G.nodes())
 # cl.modularity

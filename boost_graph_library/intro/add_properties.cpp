@@ -31,8 +31,7 @@ void example_0()
 
     Graph G(edges, edges + sizeof(edges) / sizeof(Edge), weights, num_nodes);
 }
-
-int main(int argc, char *argv[])
+void example_1()
 {
     using namespace boost;
 
@@ -47,6 +46,10 @@ int main(int argc, char *argv[])
     // you'll get cryptic/misleading errors if you do.
     MyGraph G;
 
+    // get the property map for vertex indices
+    typedef property_map<MyGraph, vertex_index_t>::type IndexMap;
+    IndexMap vertex_id = get(vertex_index, G);
+
     int v0 = add_vertex(G);
     int v1 = add_vertex(G);
     int v2 = add_vertex(G);
@@ -55,6 +58,21 @@ int main(int argc, char *argv[])
     // (alternately, the edge already existed)
     auto e1 = add_edge(v0, v1, 10, G).first;
     auto e2 = add_edge(v1, v2, 20, G).first;
+
+    property_map<MyGraph, edge_weight_t>::type weightmap = get(edge_weight, G);
+
+    std::cout << "edges(g) = ";
+    graph_traits<MyGraph>::edge_iterator ei, ei_end;
+    for (boost::tie(ei, ei_end) = edges(G); ei != ei_end; ++ei)
+        std::cout << "(" << vertex_id[source(*ei, G)]
+                  << "," << vertex_id[target(*ei, G)] << ", "
+                  << weightmap[*ei] << ") ";
+    std::cout << std::endl;
+}
+
+int main(int argc, char *argv[])
+{
+    example_1();
 
     return 0;
 }

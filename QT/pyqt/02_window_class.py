@@ -6,7 +6,7 @@ class Window(QtGui.QMainWindow):
         super(Window, self).__init__()
         self.setGeometry(50,50,500,300)
         self.setWindowTitle("PyQt tuts!")
-        self.setWindowIcon(QtGui.QIcon('pythonlogo.png'))
+        self.setWindowIcon(QtGui.QIcon('mainlogo.png'))
         self.show()
 
 

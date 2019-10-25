@@ -18,3 +18,12 @@ g["A", "B"] = 2
 print g['A','B']
 
 print g.es["weight"]
+
+
+g = Graph.Full(3)
+for e in g.es:
+    print e.tuple
+
+# (0, 1)
+# (0, 2)
+# (1, 2)

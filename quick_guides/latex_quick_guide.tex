@@ -1,0 +1,111 @@
+% https://www.stat.berkeley.edu/~paciorek/computingTips/Customizing_numbering_pages.html
+% Customizing the numbering for pages, figures, sections, equations, theorems, and tables 
+% To number sections, pages, figures and tables nested within chapters:
+\renewcommand{\thepage}{\arabic{chapter}.\arabic{page}} 
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}  
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}  
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+
+
+% To number supplemental material with 'S':
+\renewcommand{\thepage}{S\arabic{page}} 
+\renewcommand{\thesection}{S\arabic{section}}  
+\renewcommand{\thetable}{S\arabic{table}}  
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+% To modify the text used at the start of a caption:
+\renewcommand{\figurename}{Supplemental Material, Figure} 
+
+
+
+
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor} % for setting colors
+
+% set the default code style
+\lstset{
+	frame=tb, % draw a frame at the top and bottom of the code block
+	tabsize=4, % tab space width
+	showstringspaces=false, % don't mark spaces in strings
+	numbers=left, % display line numbers on the left
+	commentstyle=\color{green}, % comment color
+	keywordstyle=\color{blue}, % keyword color
+	stringstyle=\color{red} % string color
+}
+
+
+%Displaying code in LaTeX documents -----------------------------------------------------
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor} % for setting colors
+
+% set the default code style
+\lstset{
+	frame=tb, % draw a frame at the top and bottom of the code block
+	tabsize=4, % tab space width
+	showstringspaces=false, % don't mark spaces in strings
+	numbers=left, % display line numbers on the left
+	commentstyle=\color{green}, % comment color
+	keywordstyle=\color{blue}, % keyword color
+	stringstyle=\color{red} % string color
+}
+\begin{document}
+	
+	\begin{lstlisting}[language=C++, caption={C++ code using listings}]
+	#include <iostream>
+	int main()
+	{
+		// print hello to the console
+		std::cout << "Hello, world!" << std::endl;
+		return 0;
+	}
+	\end{lstlisting}
+	
+	\begin{lstlisting}[language=Java, caption={Java code using listings}]
+	public class Hello
+	{
+		public static void main(String[] args)
+	{
+		// print hello to the console
+		System.out.println("Hello, world!");
+	}
+	}
+	\end{lstlisting}
+	
+\end{document}
+
+
+
+
+https://tex.stackexchange.com/questions/317652/how-can-i-center-equations
+
+
+
+% Make \cite{my reference} show name and year
+% https://tex.stackexchange.com/questions/135649/make-citemy-reference-show-name-and-year
+\documentclass{article}
+\usepackage[round]{natbib}   % omit 'round' option if you prefer square brackets
+\bibliographystyle{plainnat}
+\begin{document}
+\citet{Franklin1999}
+\bibliography{my_bibtex}
+\end{document}
+
+
+\usepackage{natbib}
+\citet     #textual citations, print the abbreviated author list
+\citet*    #textual citations, print the full author list
+
+\citep     #parenthetical citations, print the abbreviated author list
+\citep*    #parenthetical citations, print the full author list
+
+\citealt    #the same as \citet but without any parentheses.
+\citealp    #the same as \citep but without any parentheses. 
+
+
+\citeauthor{ale91}         #Alex et al.
+\citeauthor*{ale91}        #Alex, Mathew, and Ravi
+
+\citeyear{ale91}           #1991 
+\citeyearpar{ale91}        #(1991)
