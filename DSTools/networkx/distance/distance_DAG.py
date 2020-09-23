@@ -39,7 +39,7 @@ def make_topological_sorted(A):
     return An
 
 
-N = 200
+N = 800
 cname = str('SF-DAG-%d.dat' % N)
 adj = np.loadtxt(cname, dtype=int)
 
@@ -70,7 +70,7 @@ def defineDirectedGraph(adj, fileName):
 
 print ("after topological sorting" + "*" * 20)
 sorted_adj = make_topological_sorted(adj)
-np.savetxt("sorted-SF-DAG.dat", sorted_adj * 2, fmt="%d")
+np.savetxt(str("sorted-SF-DAG-%d.dat" % N), sorted_adj, fmt="%d")
 hub_index, DG = defineDirectedGraph(sorted_adj, "sadj")
 # print(DG.out_degree())
 p = nx.shortest_path_length(DG, source=0)
